@@ -4,6 +4,8 @@ from logger import log_state
 
 def main():
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     number =1
     while number > 0:
@@ -13,7 +15,8 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
-    print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
+        clock.tick(60)
+        dt = clock.tick(60) / 1000
     print(f"Screen width: {SCREEN_WIDTH} \nScreen height: {SCREEN_HEIGHT}")
 
 if __name__ == "__main__":
